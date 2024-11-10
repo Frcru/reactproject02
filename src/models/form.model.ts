@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const schema = z.object({
-    name: z.string().min(1, "El nombre es obligatorio"),
+    name: z.string().min(6, "El nombre es obligatorio"),
     email: z.string().email("Correo inválido").min(1, "El correo es obligatorio"),
     password: z.string().min(6, "La contraseña debe tener al menos 6 carácteres"),
     confirmPassword: z.string().min(6, "La confirmación debe tener al menos 6 caracteres")
