@@ -25,12 +25,12 @@ export const CustomForm = () => {
         type: "text" | "email" | "password",
         error: FieldError | undefined;
     }>
-     = [
-        { name: "name", label: "Name", type:"text",error: errors.name }, 
-        { name: "email", label: "Email", type:"email",error: errors.email }, 
-        { name: "password", label: "Password", type:"password",error: errors.password}, 
-        { name: "confirmPassword", label: "Confirm Password", type:"password",error:errors.confirmPassword}
-    ];
+        = [
+            { name: "name", label: "Name", type: "text", error: errors.name },
+            { name: "email", label: "Email", type: "email", error: errors.email },
+            { name: "password", label: "Password", type: "password", error: errors.password },
+            { name: "confirmPassword", label: "Confirm Password", type: "password", error: errors.confirmPassword }
+        ];
 
 
     const onSubmit: SubmitHandler<FormValues> = (data) => {
@@ -38,13 +38,15 @@ export const CustomForm = () => {
     }
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            {fields.map((field)=><CustomInput name={field.name} control={control} label={field.label} type="text" error={field.error}/>)}
+            {fields.map((field) => <CustomInput name={field.name} control={control} label={field.label} type="text" error={field.error} />)}
 
             {/* <CustomInput name="name" control={control} label="Name" type="text" error={ errors.name} />
             <CustomInput name="email" control={control} label="Email" type="email" error={errors.email} />
             <CustomInput name="password" control={control} label="Password" type="password" error={errors.password} />
             <CustomInput name="confirmPassword" control={control} label="Confirm Password" type="password" error={errors.confirmPassword} /> */}
+           
             <button type="submit">Submit</button>
+            
         </form>
     )
 }
